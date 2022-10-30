@@ -1,0 +1,30 @@
+.noUi-target {
+  height: 4px;
+  max-width: 210px;
+  background-color: #d7eadb;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+}
+#slider-round {
+  height: 10px;
+  margin: 10px 3px;
+}
+
+#slider-round .noUi-connect {
+  background: #46A358;
+}
+
+#slider-round .noUi-handle {
+  height: 15px;
+  width: 15px;
+  top: -2px;
+  right: -7.5px; /* half the max-width */
+  border-radius: 9px;
+  background-color: #46a353;
+  box-shadow: none;
+  border: 2px solid rgb(231, 231, 231);
+}
+.noUi-handle::after, .noUi-handle::before{
+    content: none;
+}
