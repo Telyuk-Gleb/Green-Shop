@@ -1,3 +1,4 @@
+
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
   autoplay: {
@@ -25,7 +26,6 @@ var input1 = document.getElementById("input-1");
 var inputs = [input0, input1];
 slider.noUiSlider.on("update", function (values, handle) {
   inputs[handle].value = Math.round(values[handle]);
-
   let minPrice = Number(input0.value);
   let maxPrice = Number(input1.value);
   let price = document.querySelectorAll("#price");
@@ -35,17 +35,16 @@ slider.noUiSlider.on("update", function (values, handle) {
     for (i = 0; i < price.length; i++) {
       priceList.push(price[i]);
     }
-
     priceList.forEach((element) => {
       if (Number(element.innerText) < minPrice) {
-        element.parentNode.classList.add("hide");
-      } else {
-        element.parentNode.classList.remove("hide");
-      }
-      if (Number(element.innerText) > maxPrice) {
         element.parentNode.classList.add("hide1");
       } else {
         element.parentNode.classList.remove("hide1");
+      }
+      if (Number(element.innerText) > maxPrice) {
+        element.parentNode.classList.add("hide2");
+      } else {
+        element.parentNode.classList.remove("hide2");
       }
     });
   });
@@ -95,6 +94,16 @@ document.querySelector("nav").addEventListener("click", (event) => {
     }
   });
 });
+
+document.querySelectorAll(".categories-count")[0].innerHTML = '('+document.querySelectorAll('.house-plant').length+')';
+document.querySelectorAll(".categories-count")[1].innerHTML = '('+document.querySelectorAll('.potter-plant').length+')';
+document.querySelectorAll(".categories-count")[2].innerHTML = '('+document.querySelectorAll('.seed').length+')';
+document.querySelectorAll(".categories-count")[3].innerHTML = '('+document.querySelectorAll('.small-plant').length+')';
+document.querySelectorAll(".categories-count")[4].innerHTML = '('+document.querySelectorAll('.big-plant').length+')'
+document.querySelectorAll(".categories-count")[5].innerHTML = '('+document.querySelectorAll('.product').length+')';
+
+
+
 
 let searchBtn = document.querySelector(".search-btn");
 let searchInput = document.querySelector(".search-input");
